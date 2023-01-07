@@ -5,6 +5,9 @@ const Checkout = () => {
     const { cartItems } = useSelector((state) => state.cart);
     console.log(cartItems)
 
+    const totalPrice = cartItems.reduce((acc, item)=>acc + item.quantity*item.price,0);
+
+
   return (
     <div class="container checkout">
 <div class="d-flex">
@@ -52,12 +55,18 @@ const Checkout = () => {
         <th colspan="2">Your order</th>
       </tr>
       <tr>
-        <td>Product Name x 2(Qty)</td>
-        <td>$88.00</td>
+        {
+            cartItems?.map((item)=>(
+                <div>
+                <td>{item.title} x {item.quantity}(Qty)</td>
+                <td>₹ {item.quantity*item.price}</td>
+                </div>
+            ))
+        }
       </tr>
       <tr>
         <td>Subtotal</td>
-        <td>$88.00</td>
+        <td>₹ {totalPrice}</td>
       </tr>
       <tr>
         <td>Shipping</td>

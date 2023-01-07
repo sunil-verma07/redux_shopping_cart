@@ -351,8 +351,17 @@
 	text-align: right;
 	color: #593d88;
   }
+  .checkout tr>div{
+	width: 150%;
+	display: flex;
+	justify-content: space-between;
+	padding-right: 20px;
+  }
+  .checkout tr>div>td:nth-child(2){
+	text-align: right;
+	color: #593d88;
+  }
   .checkout td{
-	border-bottom: 1px solid #dadada;
 	padding: 25px 25px 25px 0;
   }
   
@@ -382,3 +391,4 @@
 	cursor: pointer;
 	background: #3f2b61;
   }
+  
