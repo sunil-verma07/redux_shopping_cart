@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { toggleCart, removeItem, incrementItem, decrementItem } from '../store/slices/cartSlice';
 
 
@@ -128,13 +129,15 @@ const Cart = () => {
                                     <b>₹ {cartTotal.toLocaleString()}</b>
                                 </h3>
 
-                                <button
+                               <Link to="/checkout">
+                               <button
                                     type="button"
                                     className="checkout_btn"
                                     disabled={cartQuantity === 0}
                                 >
                                     Checkout
                                 </button>
+                               </Link>
                             </div>
                         </div>
                     </div>
